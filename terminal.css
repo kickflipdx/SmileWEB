@@ -1,0 +1,171 @@
+@font-face {
+font-family: 'smileterm';
+src: url('font/terminal.ttf') format('truetype');
+}
+p {
+	font-family: 'smileterm';
+}
+body {
+	background-color: black
+}
+.bordertype {
+display: inline-flex;
+position: fixed;
+text-align: center;
+top: 50%;
+left: 38.5%;
+animation: end 1s infinite forwards 6s;
+}
+.bordertype2 {
+display: inline-flex;
+position: fixed;
+text-align: center;
+top: 45%;
+left: 36.5%;
+animation: end 1s infinite forwards 6s;
+}
+.credits {
+font-family: 'smileterm';
+color: white;
+white-space: nowrap;
+clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+animation: cred 2s steps(32, end) forwards, cred 1s steps(32, end) reverse 5s, end 1s infinite forwards 6s;
+}
+.credits2 {
+font-family: 'smileterm';
+color: white;
+white-space: nowrap;
+clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+animation: cred 2s steps(33, end) forwards, cred 1s steps(33, end) reverse 5s, end 1s infinite forwards 6s;
+}
+@keyframes cred {
+    0% {
+        width: 0%;
+        visibility: visible;
+    }
+    100% {
+        width: 100%;
+        visibility: visible;
+    }
+}
+@keyframes blink {
+0%,
+100% {
+border-right: 2px solid transparent;
+}
+50% {
+border-right: 2px solid #222;
+}
+}
+@keyframes end {
+0% {
+width: 0;
+visibility: none;
+}
+100% {
+width: 0;
+visibility: none;
+}
+}
+@keyframes start2 {
+0% {
+width: 100%;
+visibility: inline-flex;
+}
+100% {
+width: 100%;
+visibility: inline-flex;
+}
+}
+.crt::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+@keyframes flicker {
+  0% {
+  opacity: 0.27861;
+  }
+  5% {
+  opacity: 0.34769;
+  }
+  10% {
+  opacity: 0.23604;
+  }
+  15% {
+  opacity: 0.90626;
+  }
+  20% {
+  opacity: 0.18128;
+  }
+  25% {
+  opacity: 0.83891;
+  }
+  30% {
+  opacity: 0.65583;
+  }
+  35% {
+  opacity: 0.67807;
+  }
+  40% {
+  opacity: 0.26559;
+  }
+  45% {
+  opacity: 0.84693;
+  }
+  50% {
+  opacity: 0.96019;
+  }
+  55% {
+  opacity: 0.08594;
+  }
+  60% {
+  opacity: 0.20313;
+  }
+  65% {
+  opacity: 0.71988;
+  }
+  70% {
+  opacity: 0.53455;
+  }
+  75% {
+  opacity: 0.37288;
+  }
+  80% {
+  opacity: 0.71428;
+  }
+  85% {
+  opacity: 0.70419;
+  }
+  90% {
+  opacity: 0.7003;
+  }
+  95% {
+  opacity: 0.36108;
+  }
+  100% {
+  opacity: 0.24387;
+  }
+}
+.crt::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
